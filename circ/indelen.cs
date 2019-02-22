@@ -17,33 +17,33 @@ namespace circ
             {
                 return false;
             }
-            //  het indeel proces van de dieren
+            //  het indeel proces van de dieren + 
             // eerst checken voor vlees en daarna de grootte
-            foreach (var wagonAnimal in wagons.dieren)
+            foreach (var dierwag in wagons.dieren)
             {
                 // vlees 5 nieuwe wagon
-                if (wagonAnimal.type == "Vleeseter" && wagonAnimal.grootte == "Groot")
+                if (dierwag.type == "Vleeseter" && dierwag.grootte == "Groot")
                 {
                     return false;
                 }
                 //vleeseter eet hem op
-                else if (wagonAnimal.type == "Vleeseter" && dieren.grootte == "Klein")
+                else if (dierwag.type == "Vleeseter" && dieren.grootte == "Klein")
                 {
                     return false;
                 }
-                else if (dieren.grootte == "Groot" && wagonAnimal.type == "Vleeseter" && wagonAnimal.grootte == "Middelmatig")
+                else if (dieren.grootte == "Groot" && dierwag.type == "Vleeseter" && dierwag.grootte == "Middelmatig")
                 {
                     return true;
                 }
-                else if (dieren.grootte == "Groot" && wagonAnimal.type == "Vleeseter" && wagonAnimal.grootte == "Klein")
+                else if (dieren.grootte == "Groot" && dierwag.type == "Vleeseter" && dierwag.grootte == "Klein")
                 {
                     return true;
                 }
-                else if (dieren.grootte == "Middelmatig" && wagonAnimal.type == "Vleeseter" && wagonAnimal.grootte == "Klein")
+                else if (dieren.grootte == "Middelmatig" && dierwag.type == "Vleeseter" && dierwag.grootte == "Klein")
                 {
                     return true;
                 }
-                if (dieren.type == wagonAnimal.type)
+                if (dieren.type == dierwag.type)
                 {
                     return true;
                 }

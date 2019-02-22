@@ -5,8 +5,11 @@ namespace circ
 {
     public partial class Verdelendier : Form
     {
+        //  nieuwe class indelen
         private indelen indel = new indelen();
+        // De list met wagons
         private List<Wagon> newWagon = new List<Wagon>();
+        //  lijst met alle dieren
         private List<Dier> newDier = new List<Dier>();
 
         //aanmaken nieuwe wagon
@@ -38,6 +41,7 @@ namespace circ
             {
                 puntdier = 1;
             }
+            // nieuw dier
             Dier Toevoegendier = new Dier(cbGrootte.Text, cbSoort.Text, puntdier);
             lbDier.Items.Add(Toevoegendier.type + "   " + Toevoegendier.grootte);
             newDier.Add(Toevoegendier);
@@ -45,6 +49,7 @@ namespace circ
 
         private void btnIndelen_Click(object sender, System.EventArgs e)
         {
+            //  alles leegmaken en nieuwe indeling
             lbResult.Items.Clear();
             newWagon.Clear();
             vleeseterinwagon();
@@ -63,6 +68,7 @@ namespace circ
                     newWagon.Add(wagon);
                 }
             }
+            // alle vleeseters verwijderen
             indel.Verwijdervlees(newDier);
             indelenrest();
         }
