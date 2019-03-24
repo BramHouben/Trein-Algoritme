@@ -1,6 +1,6 @@
 ﻿namespace circ
 {
-    internal class Dier
+    public class Dier
     {
         public string grootte;
         public string type;

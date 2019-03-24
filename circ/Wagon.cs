@@ -2,7 +2,7 @@
 
 namespace circ
 {
-    internal class Wagon
+    public class Wagon
     {
         public List<Dier> dieren;
 

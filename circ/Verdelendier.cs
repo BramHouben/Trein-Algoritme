@@ -7,8 +7,10 @@ namespace circ
     {
         //  nieuwe class indelen
         private indelen indel = new indelen();
+
         // De list met wagons
         private List<Wagon> newWagon = new List<Wagon>();
+
         //  lijst met alle dieren
         private List<Dier> newDier = new List<Dier>();
 
@@ -53,9 +55,10 @@ namespace circ
             lbResult.Items.Clear();
             newWagon.Clear();
             vleeseterinwagon();
+            indelenrest();
         }
 
-        private void vleeseterinwagon()
+        public void vleeseterinwagon()
         {
             //  loop door de lijst van dieren en verdeel de vleeseters
             for (int i = 0; i < newDier.Count; i++)
@@ -70,7 +73,6 @@ namespace circ
             }
             // alle vleeseters verwijderen
             indel.Verwijdervlees(newDier);
-            indelenrest();
         }
 
         public void indelenrest()
@@ -87,7 +89,7 @@ namespace circ
                         for (int i = 0; i < newWagon.Count; i++)
                         {
                             // als het dier erin mag
-                            if (indel.regelswagon(newWagon[i], dier) == true)
+                            if (indel.indelenvandieren(newWagon[i], dier) == true)
                             {
                                 newWagon[i].dieren.Add(dier);
                                 newWagon[i].punten = newWagon[i].punten + dier.punt;
@@ -106,10 +108,10 @@ namespace circ
                     }
                 }
             }
-            resultaat();
+            listresult();
         }
 
-        private void resultaat()
+        private void listresult()
         {
             foreach (var wagon in newWagon)
             {

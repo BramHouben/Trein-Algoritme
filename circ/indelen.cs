@@ -2,7 +2,7 @@
 
 namespace circ
 {
-    internal class indelen
+    public class indelen
     {
         public void Verwijdervlees(List<Dier> newDier)
         {
@@ -10,7 +10,7 @@ namespace circ
             newDier.RemoveAll(dier => dier.type == "Vleeseter");
         }
 
-        public bool regelswagon(Wagon wagons, Dier dieren)
+        public bool indelenvandieren(Wagon wagons, Dier dieren)
         {
             // kijken of het in de wagon past
             if (wagons.punten == 10 || wagons.punten + dieren.punt > 10)
